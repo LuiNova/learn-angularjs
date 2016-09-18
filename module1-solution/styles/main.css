@@ -1,0 +1,9 @@
+.message {
+    color: #8a6d3b;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.message.has-success { color: #3c763d; }
+
+.message.has-error { color: #a94442; }
