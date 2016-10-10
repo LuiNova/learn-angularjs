@@ -1,0 +1,28 @@
+<h3 class="bg-danger" ng-if="list.message.length">
+    {{ list.message }}
+</h3>
+<table class="table table-striped" ng-if="list.foundItems.length">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Short Name</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in list.foundItems">
+            <th scope="row">{{$index + 1}}</th>
+            <td>{{item.short_name}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.description}}</td>
+            <td>
+                <button type="button" class="btn btn-danger" ng-click="list.onRemove({index: $index})">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="loading" ng-transclude></div>
