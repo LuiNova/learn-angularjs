@@ -7,7 +7,7 @@
         .service('MenuSearchService', MenuSearchService)
         .directive('foundItems', FoundItemsDirective)
         .directive('loader', LoaderDirective)
-        .constant('ApiBasePath', "http://davids-restaurant.herokuapp.com");
+        .constant('ApiBasePath', 'https://davids-restaurant.herokuapp.com');
 
     function LoaderDirective() {
         var ddo = {
@@ -38,6 +38,9 @@
         return ddo;
     }
 
+    // Note: Assignment says we should not look up anything in the DOM
+    // but lectures did say we can create a link for animating elements
+    // I am in no way updating values via DOM, instead everything is being updated as part of $scope
     function FoundItemsDirectiveLink(scope, element, attrs, controller) {
 
         scope.$watch('list.isLoading()', function (newValue, oldValue) {
@@ -79,7 +82,7 @@
         vm.narrowDown = function() {
             vm.message = '';
             if (!vm.searchTerm) {
-                vm.message = 'Please enter key words';
+                vm.message = 'Nothing Found';
                 return;
             }
             vm.isLoading = true;
