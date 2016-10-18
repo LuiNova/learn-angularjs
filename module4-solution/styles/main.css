@@ -1,0 +1,139 @@
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.card {
+    padding: 30px 10px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    transition: box-shadow .25s;
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.card:last-child {
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.card p {
+    color: #666;
+}
+
+.heading h3 {
+    display: inline-block;
+}
+
+.heading span {
+    float: right;
+    color: #4db6ac;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.loading-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    background-color: #f0f1ef;
+    z-index: 998;
+}
+
+.loading {
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+}
+
+.loading .dot {
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #333;
+}
+
+.loading .dot {
+    font-size: 50px;
+    /**
+     * Use the blink animation, which is defined above
+     */
+    animation-name: blink;
+    /**
+     * The animation should take 1.4 seconds
+     */
+    animation-duration: 1.4s; /* 2s */
+    /**
+     * It will repeat itself forever
+     */
+    animation-iteration-count: infinite;
+    /**
+     * This makes sure that the starting style (opacity: .2)
+     * of the animation is applied before the animation starts.
+     * Otherwise we would see a short flash or would have
+     * to set the default styling of the dots to the same
+     * as the animation. Same applies for the ending styles.
+     */
+    animation-fill-mode: both;
+}
+
+.loading .dot:nth-child(2) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .2s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .2s;
+}
+
+.loading .dot:nth-child(3) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .4s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .4s;
+}
+
+@keyframes blink {
+    /**
+     * At the start of the animation the dot
+     * has an opacity of .2
+     */
+    0% {
+        opacity: .2; /* 0 */
+    }
+
+    /**
+     * At 20% the dot is fully visible and
+     * then fades out slowly
+     */
+    20% {
+        opacity: 1;
+        /*     transform: scale(1.2); */
+    }
+
+    /**
+     * Until it reaches an opacity of .2 and
+     * the animation can start again
+     */
+    100% {
+        opacity: .2; /* 0 */
+    }
+}

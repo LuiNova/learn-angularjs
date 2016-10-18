@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="MenuApp">
+    <head>
+        <meta charset="utf-8">
+        <title>No Cookie Shopping List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="styles/bootstrap.min.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+    </head>
+    <body>
+        <div class="container">
+            <ui-view></ui-view>
+        </div>
+
+        <loading-spinner></loading-spinner>
+
+        <!-- Libraries -->
+        <script src="lib/angular/angular.min.js"></script>
+        <script src="lib/angular/angular-ui-router.min.js"></script>
+
+        <!-- Modules -->
+        <script src="src/menu/menuapp.module.js"></script>
+        <script src="src/menu/data.module.js"></script>
+        <script src="src/spinner/spinner.module.js"></script>
+
+        <!-- Routes -->
+        <script src="src/routes.js"></script>
+
+        <!-- 'MenuApp' module artifacts -->
+        <script src="src/menu/categories.component.js"></script>
+        <script src="src/menu/items.component.js"></script>
+
+        <script src="src/menu/menudata.service.js"></script>
+        <script src="src/menu/all-categories.controller.js"></script>
+        <script src="src/menu/category-items.controller.js"></script>
+
+        <!-- 'Spinner' module artifacts -->
+        <script src="src/spinner/spinner.component.js"></script>
+
+    </body>
+</html>
